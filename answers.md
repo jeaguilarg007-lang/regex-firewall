@@ -69,3 +69,13 @@ Result:
 Explanation:
 The regex matches events where the action is ACCEPT and the protocol is TCP. The destination port is matched as 80 in the second-to-last numeric field, and the $ anchor ensures that the final field is the packet size.
 
+## Task 7
+
+Command:
+grep -E -c '^[0-9-]+ 0[0-2]:' firewall.log
+
+Result:
+13138
+
+Explanation:
+The regex matches event lines where the time field starts with hours 00, 01, or 02. The character class range [0-2] restricts the hour, and the pattern is anchored immediately after the date field.
