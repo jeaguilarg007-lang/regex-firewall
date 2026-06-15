@@ -31,3 +31,15 @@ Result:
 
 Explanation:
 The sequence \. escapes the dot character, so it is treated as a literal period instead of matching any character. The regex counts events whose source IP address begins with 11.
+
+## Task 4
+
+Command:
+grep -E -c '[0-9]{7}$' firewall.log
+
+Result:
+2343
+
+Explanation:
+The character class [0-9] matches any digit and {7} requires exactly seven digits. The $ anchor ensures that the seven-digit number is at the end of the line, which corresponds to the size field.
+
