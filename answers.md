@@ -21,3 +21,13 @@ Result:
 Explanation:
 The parentheses create a group and the | operator means OR. The regex matches lines where the action field is either DROP or REJECT, using spaces to ensure the match occurs in the action field.
 
+## Task 3
+
+Command:
+grep -E -c ' 11\.' firewall.log
+
+Result:
+33217
+
+Explanation:
+The sequence \. escapes the dot character, so it is treated as a literal period instead of matching any character. The regex counts events whose source IP address begins with 11.
