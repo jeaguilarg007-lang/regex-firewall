@@ -57,3 +57,15 @@ Result:
 
 Explanation:
 The command first filters event lines that start with a date. Then sed uses capture groups to extract the date, action, and protocol fields and backreferences (\1, \2, \3) to rebuild the output.
+
+## Task 6
+
+Command:
+grep -E -c '^.* ACCEPT TCP .* [0-9]+ 80 [0-9]+$' firewall.log
+
+Result:
+93
+
+Explanation:
+The regex matches events where the action is ACCEPT and the protocol is TCP. The destination port is matched as 80 in the second-to-last numeric field, and the $ anchor ensures that the final field is the packet size.
+
